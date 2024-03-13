@@ -9,10 +9,10 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class JaviModalComponent {
  
-  constructor(/*public activeModal: NgbActiveModal*/) {
+  /*constructor(public activeModal: NgbActiveModal) {
 
     
-  }
+  }*/
 
   cerrarModal() {
     //this.activeModal.dismiss();

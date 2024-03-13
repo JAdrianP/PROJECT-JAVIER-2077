@@ -1,2 +1,12 @@
-<button (click)="abrirModal()">Abrir Modal</button>
-<p>hola</p>
+<body>
+  <button (click)="abrirModal()">Abrir Modal</button>
+<button (click)="abrirModalDinamico()">Abrir Modal dinamico</button>
+
+<button (click)="openModal(modalTemplate)">Open modal</button>
+
+<ng-template #modalTemplate>
+  <div>This is our custom modal content</div>
+</ng-template>
+</body>
+
+
