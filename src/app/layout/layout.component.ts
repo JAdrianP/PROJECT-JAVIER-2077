@@ -4,6 +4,7 @@ import { JaviModalComponent } from '../shared/modals/javi-modal/javi-modal.compo
 import { ModalService } from '../shared/services/modal.service';
 import { Modal2Service } from '../shared/services/modal2.service';
 import { DinamicModalComponent } from '../shared/modals/dinamic-modal/dinamic-modal.component';
+import { ModalComponent } from '../shared/modals/modal/components/modal/modal.component';
 
 @Component({
   selector: 'app-layout',
@@ -20,11 +21,13 @@ export class LayoutComponent {
   }
 
   abrirModalDinamico() {
-    this.dinamicModalService.open(JaviModalComponent);
+    this.dinamicModalService.open(ModalComponent, {size:'lg', title:'titulete', text:"holawola"}).subscribe(notification => {
+      console.log(notification)
+    });
   }
 
   openModal(modalTemplate: TemplateRef<any>) {
-    this.modalService2.open(modalTemplate, {size:'lg', title:'Foo'}).subscribe(action => {
+    this.modalService2.open(modalTemplate, {size:'lg', title:'shit'}).subscribe(action => {
       console.log('modalAction', action)
     })
   }

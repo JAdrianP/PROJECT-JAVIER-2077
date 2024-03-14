@@ -10,11 +10,12 @@ export class ModalComponent {
 
   @Input() size? = 'md';
   @Input() title? = 'Modal title';
+  @Input() text? = 'Modal text';
 
   @Output() closeEvent = new EventEmitter();
   @Output() submitEvent = new EventEmitter();
 
-  @ViewChild('contentViewContainer', { read: ViewContainerRef }) public contentViewContainer!: ViewContainerRef;
+  //@ViewChild('contentViewContainer', { read: ViewContainerRef }) public contentViewContainer!: ViewContainerRef;
 
   constructor(private elementRef: ElementRef) {}
 

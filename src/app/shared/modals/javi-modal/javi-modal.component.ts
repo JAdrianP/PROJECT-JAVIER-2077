@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, ElementRef, EventEmitter, inject, Input, Output } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -9,13 +9,17 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class JaviModalComponent {
  
-  /*constructor(public activeModal: NgbActiveModal) {
+  @Input() size? = 'md';
+  @Input() title? = 'Modal title';
 
-    
-  }*/
+  @Output() closeEvent = new EventEmitter();
+  @Output() submitEvent = new EventEmitter();
 
-  cerrarModal() {
-    //this.activeModal.dismiss();
+  constructor(private elementRef: ElementRef) {}
+
+  close(): void {
+    this.elementRef.nativeElement.remove();
+    this.closeEvent.emit();
   }
 
 }
