@@ -31,7 +31,7 @@ export class ModalService {
     console.log(component);
 
     const componentFactory =
-      this.componentFactoryResolver.resolveComponentFactory(component);
+    this.componentFactoryResolver.resolveComponentFactory(component);
     const componentRef = componentFactory.create(this.injector);
 
     componentRef.instance.size = options?.size;
@@ -46,7 +46,6 @@ export class ModalService {
 
     const domElem = (componentRef.hostView as EmbeddedViewRef<any>)
       .rootNodes[0] as HTMLElement;
-
 
     document.body.appendChild(domElem);
 
