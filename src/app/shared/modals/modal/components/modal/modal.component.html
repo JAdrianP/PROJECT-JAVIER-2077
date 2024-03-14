@@ -1,15 +1,18 @@
-<div class="modal {{ size }}">
-   <div class="modal-header"> 
-    {{ title }}
-    <span class="modal-close" (click)="close()">✕</span>
-  </div>
-  <div class="modal-content">
-    <!-- <ng-content #contentViewContainer></ng-content> -->
-    {{text}}
-  </div>
-  <div class="modal-footer">
-    <button (click)="submit()">Submit</button>
-  </div>
+<div class="container">
+  <div class="modal {{ size }}">
+    <div class="my-modal-header"> 
+     {{ title }}
+     <span class="modal-close" (click)="close()">✕</span>
+   </div>
+   <div class="my-modal-content">
+     <!-- <ng-content #contentViewContainer></ng-content> -->
+     {{text}}
+   </div>
+   <div class="my-modal-footer">
+     <button class="btn btn-primary rounded-pill" (click)="submit()">Submit</button>
+   </div>
+ </div>
+ 
+ <div class="modal-backdrop" (click)="close()"></div>
+ 
 </div>
-
-<div class="modal-backdrop" (click)="close()"></div>
